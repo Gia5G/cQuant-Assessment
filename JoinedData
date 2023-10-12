@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+df=pd.read_csv('PriceData_A.csv')
+A=df.melt(id_vars=['Name', 'Date'], value_vars=['Run_1', 'Run_2', 'Run_3', 'Run_4','Run_5'], var_name='Run')
+
+df=pd.read_csv('PriceData_B.csv')
+B=df.melt(id_vars=['Name', 'Date'], value_vars=['Run_1', 'Run_2', 'Run_3', 'Run_4','Run_5'], var_name='Run')
+
+JoinedData=pd.merge(A,B, on=['Name','Date','Run'] ,how='inner')
+#print(JoinedData.head())
+
+#Calculating the differences using the merged data
+JoinedData['A-B'] = JoinedData['value_x'] - JoinedData['value_y']
+JoinedData['(A-B)/A'] = (JoinedData['value_x'] - JoinedData['value_y'])/JoinedData['value_x']
+JoinedData['abs(A-B)'] = abs(JoinedData['value_x'] - JoinedData['value_y'])
+JoinedData['abs((A-B)/A)'] = abs((JoinedData['value_x'] - JoinedData['value_y'])/JoinedData['value_x'])
+print(JoinedData.head())

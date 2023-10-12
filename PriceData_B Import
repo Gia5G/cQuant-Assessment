@@ -1,0 +1,7 @@
+#cQuant importing data
+#DataPrice_B
+import pandas as pd
+print(pd.__version__)
+df=pd.read_csv('PriceData_B.csv')
+df_meltB=df.melt(id_vars=['Name', 'Date'], value_vars=['Run_1', 'Run_2', 'Run_3', 'Run_4','Run_5'], var_name='Run')
+print(df_meltB)

@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as np
+df=pd.read_csv('PriceData_A.csv')
+A=df.melt(id_vars=['Name', 'Date'], value_vars=['Run_1', 'Run_2', 'Run_3', 'Run_4','Run_5'], var_name='Run')
+df=pd.read_csv('PriceData_B.csv')
+B=df.melt(id_vars=['Name', 'Date'], value_vars=['Run_1', 'Run_2', 'Run_3', 'Run_4','Run_5'], var_name='Run')
+JoinedData=pd.merge(A,B, on=['Name','Date','Run'] ,how='inner')
+#print(JoinedData.head())
+
+#Absolute value of the joined data
+JoinedData['abs(A-B)'] = abs(JoinedData['value_x'] - JoinedData['value_y'])
+print(JoinedData.head())

@@ -14,4 +14,7 @@ print(JoinedData.head())
 YearMin=JoinedData['abs(A-B)'].min()
 YearMax=JoinedData['abs(A-B)'].max()
 YearMean=JoinedData['abs(A-B)'].mean()
-print(YearMin)
+
+print('Overall min:', YearMin)
+print('Overall max:', YearMax)
+print('Overall mean:', YearMean)

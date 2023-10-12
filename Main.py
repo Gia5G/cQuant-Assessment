@@ -23,4 +23,7 @@ print(JoinedData)
 # using the to_csv function
 # "JoinedDatax.to_csv('Summary Statistics by [dimension]')" 
 #
-# For task 7,
+# For task 7, I would create a big picture chart of difference between A and B using a line graph. The x axis would have the range of the dates given while the y axis
+# would show the difference in values and the lines for data A and B would be colored in blue and orange or two other contrasting colors.
+# I would also include similar figures that look at the mean difference by month, day, and hour to show possible correlations between those factors and the difference between A and B
+#

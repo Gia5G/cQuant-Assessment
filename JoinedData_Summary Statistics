@@ -10,3 +10,8 @@ JoinedData=pd.merge(A,B, on=['Name','Date','Run'] ,how='inner')
 #Absolute value of the joined data
 JoinedData['abs(A-B)'] = abs(JoinedData['value_x'] - JoinedData['value_y'])
 print(JoinedData.head())
+
+YearMin=JoinedData['abs(A-B)'].min()
+YearMax=JoinedData['abs(A-B)'].max()
+YearMean=JoinedData['abs(A-B)'].mean()
+print(YearMin)
